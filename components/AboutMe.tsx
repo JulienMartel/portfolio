@@ -22,6 +22,7 @@ import {
   MdLocationPin,
   MdAccessTimeFilled,
   MdLanguage,
+  MdSchool,
 } from "react-icons/md";
 import { useSpring, animated } from "@react-spring/web";
 import { IconType } from "react-icons/lib";
@@ -136,23 +137,15 @@ export const AboutMe = () => {
             </StatLabel>
             <StatNumber fontSize={"lg"}>English, French</StatNumber>
           </Stat>
+
+          <Stat>
+            <StatLabel>
+              education{" "}
+              <Icon color="#fad121" mb={-0.5} as={MdSchool} opacity={0.8} />
+            </StatLabel>
+            <StatNumber fontSize={"lg"}>College</StatNumber>
+          </Stat>
         </StatGroup>
-
-        {/* ju#8888 */}
-
-        {/* <Flex
-          w="full"
-          minH="40"
-          p={4}
-          border="solid 3px"
-          borderColor="off.white"
-          rounded="lg"
-          justify="center"
-          align="center"
-        >
-          {wpgTime + " " + timezone}, Winnipeg, CA, languages: English, French,
-          timezone, languages, etc
-        </Flex> */}
       </Flex>
     </animated.div>
   );

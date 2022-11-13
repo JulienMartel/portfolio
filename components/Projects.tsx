@@ -38,6 +38,7 @@ export const Projects = () => {
       <Text mt={-64} color="off.white" opacity={0}>
         test
       </Text>
+
       <Flex mt={64} justify="center" align="center">
         <DropBox
           ref={dropBoxRef}

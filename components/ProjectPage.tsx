@@ -31,8 +31,6 @@ export const ProjectPage: React.FC<Props> = ({
     config: { bounce: 0 },
   });
 
-  const projectContent = content[lastHovered];
-
   const projectPageProps = useSpring({
     opacity: isDropped ? 1 : 0,
     scale: isDropped ? 1 : 0,
@@ -42,6 +40,7 @@ export const ProjectPage: React.FC<Props> = ({
   const dropBoxX = Number(dropBoxRef.current?.offsetLeft || 0);
   const dropBoxY = Number(dropBoxRef.current?.offsetTop || 0);
 
+  const projectContent = content[lastHovered];
   return (
     <>
       <animated.div
