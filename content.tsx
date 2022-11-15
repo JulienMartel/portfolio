@@ -1,3 +1,14 @@
+import { IconType } from "react-icons/lib";
+import moment from "moment-timezone";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  MdEmail,
+  MdLocationPin,
+  MdAccessTimeFilled,
+  MdLanguage,
+  MdSchool,
+} from "react-icons/md";
+
 const technologies = {
   chrome: {
     name: "Chrome API",
@@ -42,9 +53,6 @@ const technologies = {
   },
 };
 
-const { vercel, node, chrome, pptr, js, html, css, ubuntu, web3, sharp } =
-  technologies;
-
 interface Content {
   id: number;
   color: string;
@@ -55,6 +63,8 @@ interface Content {
   links?: { name: string; url?: string }[];
 }
 
+const { vercel, node, chrome, pptr, js, html, css, ubuntu, web3, sharp } =
+  technologies;
 export const content: Content[] = [
   {
     id: 0,
@@ -130,4 +140,46 @@ export const content: Content[] = [
       { name: "chrome web store", url: "#" },
     ],
   },
+];
+
+export const socials: { name: string; icon: IconType; href: string }[] = [
+  {
+    name: "github",
+    href: "https://github.com/JulienMartel",
+    icon: FaGithub,
+  },
+  {
+    name: "twitter",
+    href: "https://twitter.com/cc4888",
+    icon: FaTwitter,
+  },
+  {
+    name: "email",
+    href: "#",
+    icon: MdEmail,
+  },
+  {
+    name: "linkedin",
+    href: "https://www.linkedin.com/in/julienbmartel/",
+    icon: FaLinkedin,
+  },
+];
+
+export const facts: { icon: IconType; val: string }[] = [
+  { val: "English, French", icon: MdLanguage },
+  { val: "Winnipeg, CA", icon: MdLocationPin },
+  {
+    val: moment(Date.now()).tz("America/Winnipeg").format("h:mma (z)"),
+    icon: MdAccessTimeFilled,
+  },
+  { val: "MITT College", icon: MdSchool },
+];
+
+export const skills = [
+  "typescript",
+  "next.js",
+  "microservices",
+  "web3",
+  "design",
+  "automation",
 ];

@@ -1,6 +1,6 @@
-import { Flex, Stack, Text, Box, useConst } from "@chakra-ui/react";
-import { useSpring, animated, useSprings, config } from "@react-spring/web";
+import { useSpring, animated } from "@react-spring/web";
 import { forwardRef } from "react";
+import { DROPBOX_SIZE } from "../constants";
 import { content } from "../content";
 
 interface Props {
@@ -8,10 +8,11 @@ interface Props {
   lastHovered: number;
   hovering: boolean;
   dragIndex: number;
+  children: React.ReactNode;
 }
 
 export const DropBox = forwardRef<HTMLDivElement, Props>(
-  ({ lastHovered, hovering, dragIndex }, ref) => {
+  ({ lastHovered, hovering, dragIndex, children }, ref) => {
     const dropBoxProps = useSpring({
       width: hovering ? "100%" : "0",
       config: { bounce: 0 },
@@ -27,12 +28,16 @@ export const DropBox = forwardRef<HTMLDivElement, Props>(
       <animated.div
         ref={ref}
         style={{
-          width: "80px",
-          height: "80px",
-          border: "4px solid",
+          width: DROPBOX_SIZE + "px",
+          height: DROPBOX_SIZE + "px",
+          border: "3px solid",
           borderColor: "var(--chakra-colors-off-white)",
           borderRadius: "12px",
           position: "relative",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          zIndex: "1",
           ...opacityProps,
         }}
       >
@@ -41,7 +46,9 @@ export const DropBox = forwardRef<HTMLDivElement, Props>(
             position: "absolute",
             top: 0,
             left: 0,
-            borderRadius: 7,
+            borderRadius: "7px",
+            zIndex: "-1",
+
             background: hovering
               ? content[dragIndex].color
               : content[lastHovered].color,
@@ -49,6 +56,8 @@ export const DropBox = forwardRef<HTMLDivElement, Props>(
             ...dropBoxProps,
           }}
         />
+
+        {children}
       </animated.div>
     );
   }
