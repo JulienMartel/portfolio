@@ -23,32 +23,6 @@ export const Projects = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <Flex
-      overflow="hidden"
-      justify="center"
-      align="center"
-      position="absolute"
-      flexDir="column"
-      top={0}
-      bottom={0}
-      left={0}
-      right={0}
-    >
-      <Text mt={-64} color="off.white" opacity={0}>
-        test
-      </Text>
-
-      <Flex mt={64} justify="center" align="center">
-        <DropBox
-          ref={dropBoxRef}
-          isDropped={isDropped}
-          lastHovered={lastHovered}
-          hovering={hovering}
-          dragIndex={dragIndex}
-        />
-
-=======
     <Flex justify="center" align="center" boxSize={RADIUS * 2 + BALL_SIZE}>
       <DropBox
         ref={dropBoxRef}
@@ -57,7 +31,6 @@ export const Projects = () => {
         hovering={hovering}
         dragIndex={dragIndex}
       >
->>>>>>> single-page
         <Balls
           dropBoxRef={dropBoxRef}
           setDragIndex={setDragIndex}
