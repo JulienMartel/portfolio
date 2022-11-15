@@ -1,11 +1,10 @@
 import type { NextPage } from "next";
-import { Container, Flex, Divider } from "@chakra-ui/react";
+import { Container, Flex, Box } from "@chakra-ui/react";
 import { Header } from "./../components/Header";
 import { Bio } from "../components/Bio";
 import { Links } from "../components/Links";
 import { useSpring, animated } from "@react-spring/web";
 import { Projects } from "./../components/Projects";
-import { BALL_SIZE, RADIUS } from "../constants";
 import { Facts } from "./../components/Facts";
 
 const Home: NextPage = () => {
@@ -35,11 +34,7 @@ const Home: NextPage = () => {
 
           <Projects />
 
-          <Divider
-            orientation="vertical"
-            height={RADIUS * 2 + BALL_SIZE + 30}
-            opacity={0.15}
-          />
+          <Box />
         </Flex>
       </Container>
     </Flex>
