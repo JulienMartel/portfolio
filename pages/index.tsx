@@ -21,6 +21,7 @@ const Home: NextPage = () => {
   //   to: { opacity: 1, y: 0 },
   //   delay: 100,
   // });
+
   const mobile = useBreakpointValue([true, , false]);
 
   return (
