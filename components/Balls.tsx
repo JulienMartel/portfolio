@@ -39,8 +39,10 @@ export const Balls = ({
   );
 
   useEffect(() => {
-    api.resume();
-  }, [resume]);
+    if (api) {
+      api.resume();
+    }
+  }, [resume, api]);
 
   const [isDragging, setIsDragging] = useState(false);
   const bind = useDrag(
