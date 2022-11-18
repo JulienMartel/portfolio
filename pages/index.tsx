@@ -14,6 +14,7 @@ import { useSpring, animated } from "@react-spring/web";
 import { Projects } from "./../components/Projects";
 import { Facts } from "./../components/Facts";
 import { FaDesktop } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
   // const props = useSpring({
@@ -21,6 +22,11 @@ const Home: NextPage = () => {
   //   to: { opacity: 1, y: 0 },
   //   delay: 100,
   // });
+
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   const mobile = useBreakpointValue([true, , false]);
 
@@ -32,7 +38,7 @@ const Home: NextPage = () => {
         maxW="container.md"
         w="full"
         p={4}
-        hidden={mobile}
+        hidden={mobile && !loading}
       >
         <Header />
 
@@ -50,7 +56,7 @@ const Home: NextPage = () => {
       </Container>
 
       <Flex
-        hidden={!mobile}
+        hidden={!mobile || loading}
         w="full"
         h="full"
         justify="center"

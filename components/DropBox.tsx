@@ -1,5 +1,4 @@
 import { useSpring, animated } from "@react-spring/web";
-import { forwardRef } from "react";
 import { DROPBOX_SIZE } from "../constants";
 import { content } from "../content";
 
