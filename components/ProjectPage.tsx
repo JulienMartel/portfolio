@@ -150,7 +150,11 @@ export const ProjectPage: React.FC<Props> = ({
                 overflow={"hidden"}
                 rounded="lg"
               >
-                <a href={projectContent.imgUrl} target="_blank">
+                <a
+                  href={projectContent.imgUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image src={projectContent.imgUrl} layout="fill" />
                 </a>
               </Box>
