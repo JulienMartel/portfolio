@@ -1,31 +1,24 @@
 import { useDrag } from "@use-gesture/react";
-import { animated, useSprings, config } from "@react-spring/web";
-import { BALLS, DEGREE_PER_BALL, DROPBOX_SIZE } from "../constants";
+import { useSprings, config } from "@react-spring/web";
 import { useEffect, useState } from "react";
-import { Icon, Flex } from "@chakra-ui/react";
-import { ARROWS, BALL_SIZE } from "../constants";
-import { FaLongArrowAltDown } from "react-icons/fa";
-import { content } from "../content";
+import { BALLS, DROPBOX_SIZE } from "../../../constants";
 
 interface Props {
   dropBoxRef: React.RefObject<HTMLDivElement>;
+  resume: boolean;
   setDragIndex: React.Dispatch<React.SetStateAction<number>>;
   setIsDropped: React.Dispatch<React.SetStateAction<boolean>>;
   setHovering: React.Dispatch<React.SetStateAction<boolean>>;
   setLastHovered: React.Dispatch<React.SetStateAction<number>>;
-  resume: boolean;
-  hovering: boolean;
-  isDropped: boolean;
 }
 
-export const Balls = ({
+export const useBalls = ({
   dropBoxRef,
+  resume,
   setDragIndex,
   setIsDropped,
   setHovering,
   setLastHovered,
-  resume,
-  isDropped,
 }: Props) => {
   const [props, api] = useSprings(
     BALLS.length,
@@ -71,7 +64,6 @@ export const Balls = ({
           x: down ? BALLS[i][0] + mx : BALLS[i][0],
           y: down ? BALLS[i][1] + my : BALLS[i][1],
           scale: down ? 1.2 : 1,
-          // immediate: down,
           onPause: () => {
             setIsDropped(true);
           },
@@ -99,71 +91,5 @@ export const Balls = ({
     { pointer: { capture: true } }
   );
 
-  return (
-    <>
-      {props.map(({ x, y, scale }, i) => (
-        <animated.div
-          key={i}
-          style={{
-            x,
-            y,
-            scale,
-            height: BALL_SIZE + "px",
-            width: BALL_SIZE + "px",
-            borderRadius: "100%",
-            position: "absolute",
-            backgroundColor: content[i].color,
-            cursor: "pointer",
-            touchAction: "none",
-            zIndex: 20,
-          }}
-          {...bind(i)}
-        />
-      ))}
-      <Arrows isDropped={isDropped} isDragging={isDragging} />
-    </>
-  );
-};
-
-const Arrows = ({
-  isDragging,
-  isDropped,
-}: {
-  isDragging: boolean;
-  isDropped: boolean;
-}) => {
-  const [props] = useSprings(
-    ARROWS.length,
-    (i) => ({
-      from: { x: ARROWS[i][0] * 1.4, y: ARROWS[i][1] * 1.4, opacity: 0 },
-      to: {
-        x: ARROWS[i][0],
-        y: ARROWS[i][1],
-        opacity: isDragging || isDropped ? 0 : 0.1,
-        immediate: true,
-      },
-      delay: isDragging || isDropped ? 0 : 1300,
-      config: config.slow,
-    }),
-    [isDragging, isDropped]
-  );
-
-  return (
-    <>
-      {props.map(({ x, y, opacity }, i) => (
-        <animated.div
-          key={i}
-          style={{
-            position: "absolute",
-            opacity,
-            rotate: 180 - i * DEGREE_PER_BALL,
-            x,
-            y,
-          }}
-        >
-          <Icon fontSize="xl" as={FaLongArrowAltDown} color="off.white" />
-        </animated.div>
-      ))}
-    </>
-  );
+  return { props, bind, isDragging };
 };

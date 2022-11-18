@@ -1,6 +1,6 @@
 import { useSpring, animated } from "@react-spring/web";
-import { DROPBOX_SIZE } from "../constants";
-import { content } from "../content";
+import { DROPBOX_SIZE } from "../../../constants";
+import { content } from "../../../content";
 
 interface Props {
   isDropped: boolean;
@@ -18,7 +18,7 @@ export const DropBox = ({
   children,
   dropBoxRef,
 }: Props) => {
-  const dropBoxProps = useSpring({
+  const curtainProps = useSpring({
     width: hovering ? "100%" : "0",
     config: { bounce: 0 },
   });
@@ -58,7 +58,7 @@ export const DropBox = ({
             ? content[dragIndex].color
             : content[lastHovered].color,
           height: "100%",
-          ...dropBoxProps,
+          ...curtainProps,
         }}
       />
 

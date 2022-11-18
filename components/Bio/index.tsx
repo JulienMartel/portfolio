@@ -6,7 +6,7 @@ import {
   Badge,
   StackProps,
 } from "@chakra-ui/react";
-import { skills, bio } from "../content";
+import { skills, bio } from "../../content";
 
 export const Bio = (props: StackProps) => {
   return (

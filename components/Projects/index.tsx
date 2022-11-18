@@ -1,9 +1,9 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { useRef, useState } from "react";
-import { DropBox } from "../components/DropBox";
-import { Balls } from "../components/Balls";
-import { ProjectPage } from "../components/ProjectPage";
-import { BALL_SIZE, RADIUS } from "../constants";
+import { DropBox } from "./DropBox";
+import { Balls } from "./Balls";
+import { Project } from "./Project";
+import { BALL_SIZE, RADIUS } from "../../constants";
 
 export const Projects = () => {
   const dropBoxRef = useRef<HTMLDivElement>(null);
@@ -43,7 +43,7 @@ export const Projects = () => {
         />
       </DropBox>
 
-      <ProjectPage
+      <Project
         isDropped={isDropped}
         close={close}
         lastHovered={lastHovered}

@@ -1,18 +1,18 @@
 import { IconType } from "react-icons/lib";
-import { HStack, Link, Icon, StackProps } from "@chakra-ui/react";
-import { socials } from "../content";
+import { HStack, Link as ChakraLink, Icon, StackProps } from "@chakra-ui/react";
+import { socials } from "../../content";
 
 export const Links = (props: StackProps) => {
   return (
     <HStack spacing={5} {...props}>
       {socials.map((social) => (
-        <MyLink key={social.name} {...social} />
+        <Link key={social.name} {...social} />
       ))}
     </HStack>
   );
 };
 
-const MyLink = ({
+const Link = ({
   name,
   href,
   icon,
@@ -22,8 +22,8 @@ const MyLink = ({
   icon: IconType;
 }) => {
   return (
-    <Link href={href} isExternal rel="noopener noreferrer">
+    <ChakraLink href={href} isExternal rel="noopener noreferrer">
       <Icon mb={-0.5} as={icon} /> {name}
-    </Link>
+    </ChakraLink>
   );
 };
