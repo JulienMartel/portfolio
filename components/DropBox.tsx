@@ -8,7 +8,7 @@ interface Props {
   hovering: boolean;
   dragIndex: number;
   children: React.ReactNode;
-  ref: React.RefObject<HTMLDivElement>;
+  dropBoxRef: React.RefObject<HTMLDivElement>;
 }
 
 export const DropBox = ({
@@ -16,7 +16,7 @@ export const DropBox = ({
   hovering,
   dragIndex,
   children,
-  ref,
+  dropBoxRef,
 }: Props) => {
   const dropBoxProps = useSpring({
     width: hovering ? "100%" : "0",
@@ -31,7 +31,7 @@ export const DropBox = ({
 
   return (
     <animated.div
-      ref={ref}
+      ref={dropBoxRef}
       style={{
         width: DROPBOX_SIZE + "px",
         height: DROPBOX_SIZE + "px",

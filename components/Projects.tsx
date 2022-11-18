@@ -25,7 +25,7 @@ export const Projects = () => {
   return (
     <Flex justify="center" align="center" boxSize={RADIUS * 2 + BALL_SIZE}>
       <DropBox
-        ref={dropBoxRef}
+        dropBoxRef={dropBoxRef}
         isDropped={isDropped}
         lastHovered={lastHovered}
         hovering={hovering}
