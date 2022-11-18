@@ -1,6 +1,6 @@
 import { useDrag } from "@use-gesture/react";
 import { animated, useSprings, config } from "@react-spring/web";
-import { BALLS, DEGREE_PER_BALL } from "../constants";
+import { BALLS, DEGREE_PER_BALL, DROPBOX_SIZE } from "../constants";
 import { useEffect, useState } from "react";
 import { Icon, Flex } from "@chakra-ui/react";
 import { ARROWS, BALL_SIZE } from "../constants";
@@ -78,9 +78,9 @@ export const Balls = ({
 
       if (
         //theyre hovering over drop zone
-        Math.abs(x - dropBoxX) < 40 &&
+        Math.abs(x - dropBoxX) < DROPBOX_SIZE &&
         x - dropBoxX > 0 &&
-        Math.abs(dropBoxY - y) < 40 &&
+        Math.abs(dropBoxY - y) < DROPBOX_SIZE &&
         y - dropBoxY > 0
       ) {
         setHovering(true);

@@ -42,6 +42,7 @@ export const ProjectPage: React.FC<Props> = ({
   const dropBoxY = Number(dropBoxRef.current?.offsetTop || 0);
 
   const projectContent = content[lastHovered];
+
   return (
     <>
       <Flex
@@ -64,7 +65,7 @@ export const ProjectPage: React.FC<Props> = ({
             left: dropBoxX + 20,
             top: dropBoxY + 20,
             zIndex: 50,
-            backgroundColor: content[lastHovered].color,
+            backgroundColor: projectContent.color,
             borderRadius: "100%",
             overflow: "hidden",
             ...newPageProps,
@@ -111,20 +112,33 @@ export const ProjectPage: React.FC<Props> = ({
               <CloseButton onClick={close} size="lg" />
             </Flex>
 
-            <HStack my={3} spacing={5}>
-              <Link href="#">website</Link>
-              <Link href="#">github</Link>
-              <Link href="#">Link 3</Link>
-            </HStack>
+            <Text
+              fontWeight="bold"
+              mb={3}
+              fontSize="xl"
+              color={projectContent.color}
+            >
+              {projectContent.subTitle}
+            </Text>
 
             <Flex>
               <Box w="50%" mr={4}>
-                <Text align="left">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </Text>
+                <Text align="left">{projectContent.desc}</Text>
+
+                <Flex flexWrap="wrap" mt={2} hidden={!projectContent.links}>
+                  {projectContent.links?.map(({ name, url }) => (
+                    <Link
+                      mr="5"
+                      mt={2}
+                      key={name}
+                      isExternal
+                      fontWeight="bold"
+                      href={url}
+                    >
+                      {name}
+                    </Link>
+                  ))}
+                </Flex>
               </Box>
               <Box
                 w="50%"
@@ -136,13 +150,13 @@ export const ProjectPage: React.FC<Props> = ({
                 overflow={"hidden"}
                 rounded="lg"
               >
-                <a href="/archillect-tab.png" target="_blank">
+                <a href={projectContent.imgUrl} target="_blank">
                   <Image src={projectContent.imgUrl} layout="fill" />
                 </a>
               </Box>
             </Flex>
 
-            <Flex wrap={"wrap"} mt={3}>
+            <Flex mt={3} wrap={"wrap"}>
               {projectContent.tags.map((tag) => {
                 return <TechTag key={tag.name} name={tag.name} src={tag.src} />;
               })}

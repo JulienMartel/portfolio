@@ -15,6 +15,6 @@ export const BALLS = new Array(content.length).fill(null).map((_, i) => {
 
 export const BALL_SIZE = 40;
 
-export const DROPBOX_SIZE = 50;
+export const DROPBOX_SIZE = 55;
 
 export const ARROWS = BALLS.map(([x, y]) => [x * 0.55, y * 0.55]);

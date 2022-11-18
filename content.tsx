@@ -8,6 +8,7 @@ import {
   MdLanguage,
   MdSchool,
 } from "react-icons/md";
+import { Text } from "@chakra-ui/react";
 
 const technologies = {
   chrome: {
@@ -51,94 +52,218 @@ const technologies = {
   sharp: {
     name: "sharp.js (img manipulation)",
   },
+  next: {
+    name: "Next.js",
+    src: "/tech/next.png",
+  },
+  chakra: {
+    name: "Chakra UI",
+    src: "/tech/chakra.png",
+  },
+  mongo: {
+    name: "MongoDB",
+    src: "/tech/mongo.png",
+  },
+  cron: {
+    name: "Cron Jobs",
+  },
+  discord: {
+    name: "discord.js",
+  },
+  stripe: {
+    name: "Stripe Connect",
+    src: "/tech/stripe.png",
+  },
+  maps: {
+    name: "Google Maps API",
+    src: "/tech/maps.png",
+  },
+  firebase: {
+    name: "Firebase",
+    src: "/tech/firebase.png",
+  },
+  sendgrid: {
+    name: "SendGrid",
+    src: "/tech/sendgrid.png",
+  },
+  spring: {
+    name: "react-spring",
+  },
+  gesture: {
+    name: "@use-gesture/react",
+  },
+  ts: {
+    name: "TypeScript",
+    src: "/tech/ts.png",
+  },
+  ethers: {
+    name: "ethers.js",
+  },
+  wagmi: {
+    name: "wagmi",
+  },
+  rainbow: {
+    name: "RainbowKit",
+    src: "/tech/rainbow.png",
+  },
+  charts: {
+    name: "lightweight-charts",
+  },
+  three: {
+    name: "three.js",
+    src: "/tech/three.png",
+  },
+  graph: {
+    name: "The Graph",
+    src: "/tech/graph.png",
+  },
+  framer: {
+    name: "Framer Motion",
+    src: "/tech/framer.png",
+  },
 };
 
+const {
+  vercel,
+  node,
+  chrome,
+  pptr,
+  js,
+  html,
+  css,
+  ubuntu,
+  web3,
+  sharp,
+  next,
+  chakra,
+  mongo,
+  cron,
+  express,
+  discord,
+  stripe,
+  maps,
+  firebase,
+  sendgrid,
+  spring,
+  gesture,
+  ts,
+  ethers,
+  wagmi,
+  rainbow,
+  three,
+  graph,
+  framer,
+  charts,
+} = technologies;
+
 interface Content {
-  id: number;
   color: string;
   title: string;
+  subTitle: string;
   desc: string;
   imgUrl: string;
   tags: { name: string; src?: string }[];
   links?: { name: string; url?: string }[];
 }
 
-const { vercel, node, chrome, pptr, js, html, css, ubuntu, web3, sharp } =
-  technologies;
 export const content: Content[] = [
   {
-    id: 0,
     color: "#90cff1",
-    title: "Cool Pets Wallpaper Generator",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    title: "cpwp",
+    subTitle: "Cool Pets Wallpaper Generator",
+    desc: "Built for the Cool Cats/Pets NFT communities, this simple site allows you to create a wallpaper (for mobile or desktop) using any of the 20k Cool Pets. The Cool Pets Wallpaper Generator is open source and available on GitHub.",
     imgUrl: "/projects/cpwp.png",
-    tags: [vercel, node, web3, sharp], // todo
+    tags: [next, vercel, web3, chakra, node, sharp],
     links: [
       { name: "website", url: "https://cpwp.vercel.app/" },
-      { name: "github", url: "#" },
+      { name: "github", url: "https://github.com/JulienMartel/cpwp" },
     ],
   },
+
   {
-    id: 1,
     color: "#5d8e3b",
-    title: "degen-bot (Discord Bot & Web Scraper)",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    imgUrl: "/projects/degen-bot.png", // todo
-    tags: [chrome, vercel, pptr, js, html, css, ubuntu], // todo
-    links: [
-      { name: "github", url: "#" },
-      { name: "chrome web store", url: "#" },
-    ],
+    title: "degen-bot",
+    subTitle: "Discord Bot & Web Scraper",
+    desc: "Contracted project that was a lot of fun. This discord bot does many things, like responds to slash commands and sends automated lists. It uses puppeteer to dynamically scrape short-related info about stocks from 4+ different sites. Many challenges needed to be solved to build this scraper, while accounting for speed and consistency.",
+    imgUrl: "/projects/degen-bot.png",
+    tags: [node, pptr, discord, ubuntu],
   },
+
   {
-    id: 2,
-    color: "#0F0F0F",
-    title: "Archillect Tab Chrome Extension",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    imgUrl: "/projects/archillect-tab.png", // todo
-    tags: [chrome, vercel, pptr, js, html, css, ubuntu], // todo
+    color: "#666666",
+    title: "Archillect Tab",
+    subTitle: "Archillect Chrome Extension",
+    //redo desc
+    desc: "An older project that I brought back. Eventually, I'll scrape & store all of archillects image links, and then serve them from a DB. This will allow for robust API.",
+    imgUrl: "/projects/archillect-tab.png",
+    tags: [
+      chrome,
+      vercel,
+      express,
+      mongo,
+      js,
+      html,
+      css,
+      ubuntu,
+      cron,
+      pptr,
+      node,
+    ],
     links: [
-      // todo
       {
         name: "chrome web store",
         url: "https://chrome.google.com/webstore/detail/archillect-tab/lefgpjcahelbhhodfcgbiihdlcajlmma",
       },
-      { name: "github", url: "#" },
+      {
+        name: "github",
+        url: "https://github.com/JulienMartel/archillect-tab",
+      },
     ],
   },
+
   {
-    id: 3,
-    color: "#FFE95C", // todo
-    title: "ZooTools",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    imgUrl: "/projects/zootools.png", // todo
-    tags: [chrome, vercel, pptr, js, html, css, ubuntu], // todo
-  },
-  {
-    id: 4,
-    color: "#CA8ECD", // todo
-    title: "Spec", // todo
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    imgUrl: "/projects/archillect-tab.png", // todo
-    tags: [chrome, vercel, pptr, js, html, css, ubuntu], // todo
+    color: "#d6bcfa",
+    title: "◌ spec",
+    subTitle: "Ethereum NFT Analytics",
+    desc: "An Ethereum NFT analytics platform powered by reservoir.tools. It was created during Buildspace’s “Nights & Weekends” program, and evolved a lot over the 6 weeks. It is my largest web3 project to-date.",
+    imgUrl: "/projects/spec.png",
+    tags: [
+      ethers,
+      wagmi,
+      three,
+      rainbow,
+      graph,
+      framer,
+      charts,
+      next,
+      vercel,
+      chakra,
+    ],
     links: [
-      // todo
-      { name: "github", url: "#" },
-      { name: "chrome web store", url: "#" },
+      { name: "website", url: "https://spec.science/" },
+      { name: "github", url: "https://github.com/JulienMartel/spec" },
     ],
   },
+
   {
-    id: 5,
-    color: "#FF9999", // todo
-    title: "Vendo", // todo
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    imgUrl: "/projects/archillect-tab.png", // todo
-    tags: [chrome, vercel, pptr, js, html, css, ubuntu], // todo
+    color: "#FCDF5F",
+    title: "Portfolio",
+    subTitle: "This Site",
+    desc: "A fun site thrown together to showcase some of my projects & skills. I’m currently looking for employment opportunities, reach out if you’re hiring/contracting!",
+    imgUrl: "/projects/portfolio.png",
+    tags: [ts, spring, gesture, chakra, next, vercel],
     links: [
-      // todo
-      { name: "github", url: "#" },
-      { name: "chrome web store", url: "#" },
+      { name: "github", url: "https://github.com/JulienMartel/portfolio" },
     ],
+  },
+
+  {
+    color: "#f098a7",
+    title: "Vendo",
+    subTitle: "Referral Markeplace",
+    desc: "An startup that I co-founded. We built a referral marketplace, where users could earn money by referring others to products & services. Being a 2-sided marketplace using stripe connect, this is the largest and most complex project I've built.",
+    imgUrl: "/projects/vendo.png",
+    tags: [stripe, maps, firebase, sendgrid, vercel, next, js, chakra],
   },
 ];
 
@@ -155,7 +280,7 @@ export const socials: { name: string; icon: IconType; href: string }[] = [
   },
   {
     name: "email",
-    href: "#",
+    href: "mailto:julienbmartel@gmail.com",
     icon: MdEmail,
   },
   {
@@ -178,8 +303,18 @@ export const facts: { icon: IconType; val: string }[] = [
 export const skills = [
   "typescript",
   "next.js",
-  "microservices",
   "web3",
   "design",
   "automation",
+  "microservices",
 ];
+
+export const bio = (
+  <>
+    Julien <Text as={"i"}>— online name: ju/jubag —</Text> is a fullstack web
+    engineer with diverse experience. Since completing his software development
+    schooling, he’s had a chance to work in different work environments like
+    startups, enterprise, and contracted work/projects. He is currently pursuing
+    his interests in Ethereum and AI.
+  </>
+);

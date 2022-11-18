@@ -37,7 +37,7 @@ export const DropBox = forwardRef<HTMLDivElement, Props>(
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          zIndex: "1",
+          zIndex: 10,
           ...opacityProps,
         }}
       >
