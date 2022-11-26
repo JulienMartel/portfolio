@@ -193,8 +193,7 @@ export const content: Content[] = [
     color: "#666666",
     title: "Archillect Tab",
     subTitle: "Archillect Chrome Extension",
-    //redo desc
-    desc: "An older project that I brought back. Eventually, I'll scrape & store all of archillects image links, and then serve them from a DB. This will allow for robust API.",
+    desc: "I scraped Archillect's entire archive of 400k+ images and saved them to a db. There is a cron job running that scrapes the most recent images to keep it in sync. From there, I created an unofficial Archillect API, and a chrome extension to consume it. ",
     imgUrl: "/projects/archillect-tab.png",
     tags: [
       chrome,
