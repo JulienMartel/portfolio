@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <Box>
       <Text fontWeight="black" fontSize="4xl">
-        Julien B. Martel
+        jubag.dev
       </Text>
     </Box>
   );
