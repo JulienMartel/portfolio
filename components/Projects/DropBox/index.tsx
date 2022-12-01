@@ -24,9 +24,9 @@ export const DropBox = ({
   });
 
   const opacityProps = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    delay: 100,
+    delay: 480,
+    from: { opacity: 0, y: 100 },
+    to: { opacity: 1, y: 0 },
   });
 
   return (

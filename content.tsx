@@ -1,13 +1,6 @@
 import { IconType } from "react-icons/lib";
-import moment from "moment-timezone";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import {
-  MdEmail,
-  MdLocationPin,
-  MdAccessTimeFilled,
-  MdLanguage,
-  MdSchool,
-} from "react-icons/md";
+import { MdEmail } from "react-icons/md";
 import { Text } from "@chakra-ui/react";
 
 const technologies = {
@@ -287,16 +280,6 @@ export const socials: { name: string; icon: IconType; href: string }[] = [
     href: "https://www.linkedin.com/in/julienbmartel/",
     icon: FaLinkedin,
   },
-];
-
-export const facts: { icon: IconType; val: string }[] = [
-  { val: "English, French", icon: MdLanguage },
-  { val: "Winnipeg, CA", icon: MdLocationPin },
-  {
-    val: moment(Date.now()).tz("America/Winnipeg").format("h:mma (z)"),
-    icon: MdAccessTimeFilled,
-  },
-  { val: "MITT College", icon: MdSchool },
 ];
 
 export const skills = [

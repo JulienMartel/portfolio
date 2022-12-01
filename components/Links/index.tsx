@@ -1,14 +1,23 @@
 import { IconType } from "react-icons/lib";
 import { HStack, Link as ChakraLink, Icon, StackProps } from "@chakra-ui/react";
 import { socials } from "../../content";
+import { useSpring, animated } from "@react-spring/web";
 
 export const Links = (props: StackProps) => {
+  const styles = useSpring({
+    delay: 250,
+    from: { opacity: 0, y: 100 },
+    to: { opacity: 1, y: 0 },
+  });
+
   return (
-    <HStack spacing={5} {...props}>
-      {socials.map((social) => (
-        <Link key={social.name} {...social} />
-      ))}
-    </HStack>
+    <animated.div style={styles}>
+      <HStack spacing={5} {...props}>
+        {socials.map((social) => (
+          <Link key={social.name} {...social} />
+        ))}
+      </HStack>
+    </animated.div>
   );
 };
 
