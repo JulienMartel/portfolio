@@ -1,17 +1,13 @@
-import {
-  Avatar,
-  HStack,
-  Text,
-  Stack,
-  Badge,
-  StackProps,
-} from "@chakra-ui/react";
+import { HStack, Text, Stack, Badge, StackProps, Box } from "@chakra-ui/react";
 import { skills, bio } from "../../content";
+import Image from "next/image";
 
 export const Bio = (props: StackProps) => {
   return (
     <HStack spacing="6" {...props}>
-      <Avatar src="/avi.png" size="2xl" />
+      <Box minW={128} h={128} overflow="hidden" rounded="full">
+        <Image height={128} width={128} src="/avi.png" alt="avi" />
+      </Box>
 
       <Stack spacing={3}>
         <Text textAlign="left">{bio}</Text>
