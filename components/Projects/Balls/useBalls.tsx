@@ -23,9 +23,9 @@ export const useBalls = ({
   const [props, api] = useSprings(
     BALLS.length,
     (i) => ({
-      from: { x: BALLS[i][0] * 8, y: BALLS[i][1] * 8, scale: 1 },
-      to: { x: BALLS[i][0], y: BALLS[i][1], scale: 1 },
-      delay: 300 + i * 60,
+      from: { x: BALLS[i][0] * 8, y: BALLS[i][1] * 8, scale: 1, opacity: 0 },
+      to: { x: BALLS[i][0], y: BALLS[i][1], scale: 1, opacity: 1 },
+      delay: 800 + i * 60,
       config: config.gentle,
     }),
     [dropBoxRef]

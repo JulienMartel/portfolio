@@ -8,9 +8,22 @@ import {
   MdLanguage,
   MdSchool,
 } from "react-icons/md";
+import { useEffect, useState } from "react";
 
 const Time = () => {
-  const time = moment(Date.now()).tz("America/Winnipeg").format("h:mma (z)");
+  const getTime = () =>
+    moment(Date.now()).tz("America/Winnipeg").format("h:mma (z)");
+
+  const [time, setTime] = useState<string>(getTime());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(getTime());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return <>{time}</>;
 };
 
@@ -26,7 +39,7 @@ const facts: { icon: IconType; val: string | JSX.Element }[] = [
 
 export const Facts = (props: BoxProps) => {
   const styles = useSpring({
-    delay: 400,
+    delay: 600,
     from: { opacity: 0, y: 100 },
     to: { opacity: 1, y: 0 },
   });

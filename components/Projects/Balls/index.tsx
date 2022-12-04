@@ -35,7 +35,7 @@ export const Balls = ({
 
   return (
     <>
-      {props.map(({ x, y, scale }, i) => (
+      {props.map(({ x, y, scale, opacity }, i) => (
         <animated.div
           key={i}
           style={{
@@ -50,6 +50,7 @@ export const Balls = ({
             cursor: "pointer",
             touchAction: "none",
             zIndex: 20,
+            opacity,
           }}
           {...bind(i)}
         />

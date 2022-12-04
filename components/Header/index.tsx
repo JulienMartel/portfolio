@@ -3,7 +3,7 @@ import { useSpring, animated } from "@react-spring/web";
 
 export const Header = () => {
   const styles = useSpring({
-    delay: 80,
+    delay: 280,
     from: { opacity: 0, y: 100 },
     to: { opacity: 1, y: 0 },
   });

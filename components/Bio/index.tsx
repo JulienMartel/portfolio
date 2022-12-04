@@ -5,19 +5,19 @@ import { useSpring, animated } from "@react-spring/web";
 
 export const Bio = (props: StackProps) => {
   const aviStyles = useSpring({
-    delay: 160,
+    delay: 360,
     from: { opacity: 0, y: 100 },
     to: { opacity: 1, y: 0 },
   });
 
   const bioStyles = useSpring({
-    delay: 240,
+    delay: 440,
     from: { opacity: 0, y: 100 },
     to: { opacity: 1, y: 0 },
   });
 
   const skillsStyles = useSpring({
-    delay: 320,
+    delay: 520,
     from: { opacity: 0, y: 100 },
     to: { opacity: 1, y: 0 },
   });

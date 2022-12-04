@@ -5,7 +5,7 @@ import { useSpring, animated } from "@react-spring/web";
 
 export const Links = (props: StackProps) => {
   const styles = useSpring({
-    delay: 250,
+    delay: 550,
     from: { opacity: 0, y: 100 },
     to: { opacity: 1, y: 0 },
   });
