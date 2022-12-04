@@ -41,8 +41,8 @@ const Seo = () => (
       images: [
         {
           url: "/og.png",
-          width: 800, // 1200
-          height: 400, // 630
+          width: 1200,
+          height: 628,
           alt: "jubag portfolio",
         },
       ],

@@ -186,7 +186,7 @@ export const content: Content[] = [
     color: "#666666",
     title: "Archillect Tab",
     subTitle: "Archillect Chrome Extension",
-    desc: "I scraped Archillect's entire archive of 400k+ images and saved them to a db. There is a cron job running that scrapes the most recent images to keep it in sync. From there, I created an unofficial Archillect API, and a chrome extension to consume it. ",
+    desc: "I scraped Archillect's entire archive of 400k+ images and saved them to a db. There is a cron job running to get the most recent images to keep it in sync. With this, I made an unofficial Archillect API, and a chrome extension to consume it. ",
     imgUrl: "/projects/archillect-tab.png",
     tags: [
       chrome,

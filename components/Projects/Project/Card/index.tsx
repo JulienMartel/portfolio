@@ -43,7 +43,13 @@ export const Card = ({ close, ...content }: Props) => {
         <CloseButton onClick={close} size="lg" />
       </Flex>
 
-      <Text fontWeight="bold" mb={3} fontSize="xl" color={content.color}>
+      <Text
+        fontWeight="bold"
+        mb={3}
+        fontSize="xl"
+        color={content.color}
+        opacity={0.8}
+      >
         {content.subTitle}
       </Text>
 
@@ -60,6 +66,8 @@ export const Card = ({ close, ...content }: Props) => {
                 isExternal
                 fontWeight="bold"
                 href={url}
+                color={content.color}
+                opacity={0.8}
               >
                 {name}
               </Link>
