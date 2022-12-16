@@ -114,6 +114,14 @@ const technologies = {
     name: "Framer Motion",
     src: "/tech/framer.png",
   },
+  mantine: {
+    name: "Mantine UI",
+    src: "/tech/mantine.png",
+  },
+  openai: {
+    name: "OpenAI API",
+    src: "/tech/openai.png",
+  },
 };
 
 const {
@@ -147,6 +155,8 @@ const {
   graph,
   framer,
   charts,
+  mantine,
+  openai,
 } = technologies;
 
 interface Content {
@@ -168,7 +178,7 @@ export const content: Content[] = [
     imgUrl: "/projects/cpwp.png",
     tags: [next, vercel, web3, chakra, node, sharp],
     links: [
-      { name: "website", url: "https://cpwp.vercel.app/" },
+      { name: "website", url: "https://cpwp.jubag.dev/" },
       { name: "github", url: "https://github.com/JulienMartel/cpwp" },
     ],
   },
@@ -212,7 +222,25 @@ export const content: Content[] = [
       },
     ],
   },
-
+  {
+    color: "#fa5252",
+    title: "binder📚",
+    subTitle: "GPT-3 Powered Book Recommendation Engine",
+    //finish
+    desc: "Binder is a web app that uses GTP-3 to recommend books you will love. All you have to do is provide a list of your favorite books, and binder will use GPT-3 as a recommendation engine to provide you with personalized book recommendations tailored to your tastes.",
+    imgUrl: "/projects/binder.png",
+    tags: [ts, mantine, openai, vercel, next],
+    links: [
+      {
+        name: "website",
+        url: "https://binder.jubag.dev/",
+      },
+      {
+        name: "github",
+        url: "https://github.com/JulienMartel/binder",
+      },
+    ],
+  },
   {
     color: "#d6bcfa",
     title: "◌ spec",
@@ -248,7 +276,6 @@ export const content: Content[] = [
       { name: "github", url: "https://github.com/JulienMartel/portfolio" },
     ],
   },
-
   {
     color: "#f098a7",
     title: "Vendo",
