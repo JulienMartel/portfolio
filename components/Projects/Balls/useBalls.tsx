@@ -12,6 +12,13 @@ interface Props {
   setLastHovered: React.Dispatch<React.SetStateAction<number>>;
 }
 
+const getCoords = (elem: HTMLDivElement | null) => {
+  if (!elem) return { dropBoxY: 0, dropBoxX: 0 };
+  var { top, left } = elem.getBoundingClientRect();
+
+  return { dropBoxY: Math.round(top), dropBoxX: Math.round(left) };
+};
+
 export const useBalls = ({
   dropBoxRef,
   resume,
@@ -55,9 +62,6 @@ export const useBalls = ({
         setIsDragging(false);
       }
 
-      const dropBoxX = Number(dropBoxRef.current?.offsetLeft);
-      const dropBoxY = Number(dropBoxRef.current?.offsetTop);
-
       api.start((i: number) => {
         if (index !== i) return;
         return {
@@ -69,6 +73,8 @@ export const useBalls = ({
           },
         };
       });
+
+      const { dropBoxX, dropBoxY } = getCoords(dropBoxRef.current);
 
       if (
         //theyre hovering over drop zone
