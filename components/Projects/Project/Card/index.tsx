@@ -93,7 +93,13 @@ export const Card = ({ close, ...content }: Props) => {
             overflow={"hidden"}
             rounded="lg"
           >
-            <Image src={content.imgUrl} layout="fill" />
+            <Image
+              src={content.imgUrl}
+              layout="fill"
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+            />
           </Box>
         </a>
       </Flex>
