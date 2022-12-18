@@ -7,6 +7,7 @@ import {
   Tag,
   TagLabel,
   Avatar,
+  useBreakpointValue as bp,
 } from "@chakra-ui/react";
 import Image from "next/image";
 
@@ -24,9 +25,9 @@ interface Props {
 export const Card = ({ close, ...content }: Props) => {
   return (
     <Flex
-      mx="auto"
+      mx={4}
       maxW="container.md"
-      w="full"
+      w="calc(100% - 32px)"
       flexDir={"column"}
       rounded="xl"
       color="off.white"
@@ -53,9 +54,11 @@ export const Card = ({ close, ...content }: Props) => {
         {content.subTitle}
       </Text>
 
-      <Flex>
-        <Box w="50%" mr={4}>
-          <Text align="left">{content.desc}</Text>
+      <Flex flexDir={bp(["column-reverse", , , "row"])}>
+        <Box w={bp(["full", , , "50%"])} mr={4}>
+          <Text align="left" mt={bp([3, , , 0])}>
+            {content.desc}
+          </Text>
 
           <Flex flexWrap="wrap" mt={2} hidden={!content.links}>
             {content.links?.map(({ name, url }) => (
@@ -78,7 +81,7 @@ export const Card = ({ close, ...content }: Props) => {
           href={content.imgUrl}
           target="_blank"
           rel="noreferrer"
-          style={{ width: "50%" }}
+          style={{ width: bp(["100%", , , "50%"]) }}
         >
           <Box
             w="full"

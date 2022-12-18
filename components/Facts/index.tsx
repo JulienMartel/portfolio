@@ -1,4 +1,12 @@
-import { Box, List, ListItem, ListIcon, BoxProps } from "@chakra-ui/react";
+import {
+  Box,
+  List,
+  ListItem,
+  ListIcon,
+  BoxProps,
+  Flex,
+  Show,
+} from "@chakra-ui/react";
 import { useSpring, animated } from "@react-spring/web";
 import { IconType } from "react-icons/lib";
 import moment from "moment-timezone";
@@ -9,6 +17,7 @@ import {
   MdSchool,
 } from "react-icons/md";
 import { useEffect, useState } from "react";
+import { Links } from "../Links";
 
 const Time = () => {
   const getTime = () =>
@@ -46,8 +55,8 @@ export const Facts = (props: BoxProps) => {
 
   return (
     <animated.div style={styles}>
-      <Box h="min" bg="#3C3C3C" rounded="lg" p="4" {...props}>
-        <List spacing={4}>
+      <Flex h="min" bg="#3C3C3C" rounded="lg" p="4" {...props}>
+        <List minW="50%" spacing={4}>
           {facts.map(({ val, icon }, i) => (
             <ListItem key={i}>
               <ListIcon as={icon} mb={0.5} color="#fad121" />
@@ -55,7 +64,11 @@ export const Facts = (props: BoxProps) => {
             </ListItem>
           ))}
         </List>
-      </Box>
+
+        <Show below="lg">
+          <Links direction="column" />
+        </Show>
+      </Flex>
     </animated.div>
   );
 };

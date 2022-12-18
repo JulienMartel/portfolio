@@ -78,7 +78,6 @@ export const Project: React.FC<Props> = ({
           style={{
             zIndex: 55,
             position: "absolute",
-            width: "100%",
             ...projectPageProps,
           }}
         >

@@ -11,7 +11,18 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ colors });
+const styles = {
+  global: {
+    body: {
+      bg: "off.black",
+    },
+  },
+};
+
+const theme = extendTheme({
+  colors,
+  styles,
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
