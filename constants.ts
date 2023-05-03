@@ -3,7 +3,7 @@ import { content } from "./content";
 export const DEGREE_PER_BALL = 360 / content.length;
 
 const radians = DEGREE_PER_BALL * (Math.PI / 180);
-export const RADIUS = 5;
+export const RADIUS = 125;
 
 export const BALLS = new Array(content.length).fill(null).map((_, i) => {
   const theta = i * radians;
